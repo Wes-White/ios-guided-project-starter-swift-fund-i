@@ -115,26 +115,68 @@ moreCaptains.insert("Jack Sparrow", at: 3)
 
 //: ### Dictionaries
 //: A Swift dictionary is similar to an array in that is a collection, but the items are stored in no particular order. To access an item, its associated key is provided. Dictionaries are also called "key-value" stores. The key has a type, and the value can have the same or a different type.
+var occupations = ["Wes": "Student", "Brian": "Team Lead"]
+//what is Brian's occupation
+occupations["Brian"]
+// we call Brian above because this is the key and occupation is the value
+
+//add a new value or update a current value to our dictionary
+occupations.updateValue("Team Lead", forKey: "Kenny")
 
 
-
+//removing value for our key Brian
+occupations.removeValue(forKey: "Brian")
 //: ## Looping
 //: ### `for`
 //: `for` loops allow for iterating over a collection of elements (usually an array), examining each element in turn.
+let scores = [92, 10 , 84, 72, 19]
 
-
-
+//loop through array and print all scores
+for score in scores{
+    
+    if score < 90{
+        print("You did not get an A grade.")
+    } else {
+        print("You got an A!!")
+    }
+    print("Your score is \(score)")
+}
 //: ### `switch`
 //: `switch` statements are useful when a multiple-choice path is possible for your code, and you want to choose a single path at runtime, based on some criteria.
+let diceRoll = 7
 
-
-
+switch diceRoll {
+case 1:
+    print("Rolled a 1")
+case 2, 3:
+    print("Rolled more than 1 but less than 4")
+case 4...6:
+    ("Rolled a number from 4-6")
+default:
+    print("You must have more than one die.")
+}
 //: ## Functions
 //: A function in Swift is nothing more than a collection of instructions that accomplish some task. The advantage to grouping the instructions into a function is that the function can then be called whenever that task should be performed, rather than having to list out those instrutions a second, third, or nth time.
+func averageScores(scores: [Int]) -> Int {
+    var totalScore = 0
+    
+    for score in scores{
+        totalScore += score //+= means take totalScore and add it to score
+        //+= means take the left and add the right to it to find a sum
+    }
+        let average = totalScore / scores.count
+       
+   return average
+}
 
-
-
+averageScores(scores: [29, 10, 93, 78, 21])
+averageScores(scores: scores) //pass in a variable array
 //: ## Tuples
 //: Tuples are a lightweight way of grouping related values into a single compound value.
+let me = (name: "Wes", favoriteColor: "purple", role: "iOS student")
 
-
+//select each key with dot notation.
+me.name
+me.favoriteColor
+me.role
+me
