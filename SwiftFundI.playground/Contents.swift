@@ -85,15 +85,32 @@ print(widthLabel)
 //: ## Collections
 //: ### Arrays
 //: A Swift array is a collection of like objects, and they are stored in the order they are added. Accessing a particular element is done by using its index value (which starts at 0).
+let shipCaptains = ["Malcolm Reynolds", "Jean-Luc Picard", "James T. Kirk", "Han Solo"]
+let differentCaptains = ["Jean-Luc Picard", "James T. Kirk", "Han Solo"]
 
+// Subscript - choose a certain item of an array
 
+let james = shipCaptains[2]
 
 //: Array equality is determined by looking at each element. If all elements are the same, and in the same order, the two arrays are equal.
-
+if shipCaptains == differentCaptains {
+    print("The arrays are equal!")
+} else {
+    print("The arrays are NOT equal!")
+}
 
 
 //: Since `shipCaptains` was declared as a constant, we must convert it to a mutable array before we can add entries.
+//sample array
+var myHobbies  = ["Coding", "OneWheeling", "Adventure"]
+//turn shipCaptains into a mutable variable
+var moreCaptains = shipCaptains
 
+//.append adds a new element to the end of the array
+moreCaptains.append("Some new captain")
+
+//.insert allows you to choose where to add a new element in an aray
+moreCaptains.insert("Jack Sparrow", at: 3)
 
 
 //: ### Dictionaries
