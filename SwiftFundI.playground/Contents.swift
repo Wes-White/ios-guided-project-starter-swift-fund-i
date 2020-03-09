@@ -174,9 +174,13 @@ averageScores(scores: scores) //pass in a variable array
 //: ## Tuples
 //: Tuples are a lightweight way of grouping related values into a single compound value.
 let me = (name: "Wes", favoriteColor: "purple", role: "iOS student")
-
 //select each key with dot notation.
 me.name
 me.favoriteColor
 me.role
 me
+
+//Inventory example
+let carrots = (name: "carrots", aisle: 4, inStock: true)
+
+carrots.inStock
